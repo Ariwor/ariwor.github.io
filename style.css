@@ -385,6 +385,27 @@ section:last-of-type { border-bottom: none; }
   margin-bottom: 0.15rem;
 }
 
+.entry-meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-shrink: 0;
+}
+
+.entry-logos {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.entry-logos a {
+  border-bottom: none;
+}
+
+.entry-logos img {
+  display: block;
+}
+
 .entry-title-row {
   display: flex;
   align-items: flex-start;
@@ -458,17 +479,14 @@ section:last-of-type { border-bottom: none; }
 
 .inst-logo:hover { opacity: 1; }
 
-/* Teaching page tuning: keep logos aligned with the entry date and title. */
 .page--teaching .entry-title-row {
   align-items: center;
 }
 
-/* Talks page: slightly tighter heading-to-first-entry spacing */
 .page--talks .page-content h2 {
   margin-bottom: 0.5rem;
 }
 
-/* Talks page: make the "Video ..." line match poster/oral typography below */
 .page--talks .entry-desc {
   font-size: 0.77rem;
   line-height: 1.45;
@@ -481,11 +499,9 @@ section:last-of-type { border-bottom: none; }
 }
 
 .page--teaching .inst-logo--eth {
-  /* ETH SVG has different bounding box; tweak to align with the date text. */
   margin-top: 0.02em;
 }
 
-/* Teaching page: specific partners have taller/wider logos; boost size. */
 .page--teaching .inst-logo--acubesat {
   height: 26px;
   max-width: 120px;
@@ -497,6 +513,17 @@ section:last-of-type { border-bottom: none; }
 }
 
 .page--teaching .inst-logo--american-farm-school {
+  height: 26px;
+  max-width: 200px;
+}
+
+.page--mentorship .inst-logo--acubesat,
+.page--mentorship .inst-logo--eduact {
+  height: 26px;
+  max-width: 140px;
+}
+
+.page--mentorship .inst-logo--american-farm-school {
   height: 26px;
   max-width: 200px;
 }
@@ -700,7 +727,6 @@ section:last-of-type { border-bottom: none; }
   border-bottom-color: var(--accent);
 }
 
-/* iGEM featured media: slightly smaller tile copy (matches compact caption scale) */
 #igem .media-tile-title {
   font-size: 0.68rem;
   line-height: 1.32;
@@ -1425,7 +1451,47 @@ dialog::backdrop {
   .nav-actions { margin-left: 0.55rem; }
 
   .entry-header { flex-wrap: wrap; }
-  .entry-date { flex-basis: 100%; order: -1; }
+  .entry-meta {
+    flex-basis: 100%;
+    order: -1;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+  }
+  .entry-date { order: 2; }
+
+  .page--mentorship .entry-header {
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .page--mentorship .entry-title-row {
+    align-items: center;
+  }
+
+  .page--mentorship .entry-title {
+    font-size: 0.92rem;
+    line-height: 1.22;
+  }
+
+  .page--mentorship .entry-meta {
+    flex-basis: auto;
+    order: 0;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+    margin-top: 0;
+    gap: 0.5rem;
+  }
+
+  .page--mentorship .entry-date {
+    font-size: 0.66rem;
+    padding-top: 0;
+  }
+
+  .page--mentorship .inst-logo {
+    height: 18px;
+    max-width: 80px;
+  }
 
   .honors-list li { flex-direction: column; }
   .honor-right { text-align: left; align-items: flex-start; }
